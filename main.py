@@ -1,5 +1,5 @@
-from CreditCard import logger
-from CreditCard import exception
+from CreditCard.logger import logging
+from CreditCard.exception import CCException
 
 if __name__=='main':
      try:

@@ -1,6 +1,6 @@
 import pandas as pandas
-from CreditCard import exception
-from CreditCard import logger
+from CreditCard.logger import logging
+from CreditCard.exception import CCException
 import pymongo
 from CreditCard.config import mongo_client
 
