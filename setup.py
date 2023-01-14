@@ -15,8 +15,8 @@ def get_requirements()->List[str]:
 
 
 setup(
-    name="credit card defaulter",
-    version="0.0.2",
+    name="CreditCard",
+    version="0.0.3",
     author="ineuron",
     author_email="kanishkakumar408@gmail.com",
     packages = find_packages(),

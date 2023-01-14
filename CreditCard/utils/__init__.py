@@ -1,8 +1,9 @@
-import pandas as pandas
+import pandas as pd
 from CreditCard.logger import logging
 from CreditCard.exception import CCException
-import pymongo
 from CreditCard.config import mongo_client
+import os,sys
+
 
 def get_collection_as_dataframe(database_name:str,collection_name:str)->pd.DataFrame:
     """
@@ -25,3 +26,5 @@ def get_collection_as_dataframe(database_name:str,collection_name:str)->pd.DataF
         return df
     except Exception as e:
         raise SensorException(e, sys)
+    
+
