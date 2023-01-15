@@ -40,12 +40,14 @@ class DataIngestionConfig:
 
 
 class DataValidationConfig:
-    def __ini__(self,training_pipeline_config:TrainingPipelineConfig):
+    def __init__(self,training_pipeline_config:TrainingPipelineConfig):
         try:
             self.data_validation_dir=os.path.join(training_pipeline_config.artifact_dir,"data_ingestion")
-            self.report_file_path=os.path.join(elf.data_validation_dir,"report.yaml")
+            self.report_file_path=os.path.join(self.data_validation_dir,"report.yaml")
             self.missing_threshold:float=0.3
             self.base_file_path = os.path.join("default of credit card clients.csv")
+        except Exception as e:
+                raise CCException(e,sys)     
 
 
 class DataTransformationConfig:...

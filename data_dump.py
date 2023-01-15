@@ -10,7 +10,7 @@ DATABASE_NAME = "Credit_Card"
 COLLECTION_NAME = "CC_Defaulter"
 
 if __name__=="__main__":
-    df = pd.read_csv(DATA_FILE_PATH, sep=',', header=None,engine="python")
+    df = pd.read_csv(DATA_FILE_PATH, sep=',',engine='python')
     print(f"Number of rows and column : {df.shape}")
 
     #convert df to json which can be dumped in mongodb

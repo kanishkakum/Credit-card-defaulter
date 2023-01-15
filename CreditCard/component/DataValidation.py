@@ -13,10 +13,10 @@ class DataValidation:
     def __init__(self,data_validation_config:config_entity.DataValidationConfig,
     data_ingestion_artifact:artifact_entity.DataIngestionArtifact):
         try:
-            logging.info(f"{'>>'*20} Data Validation {'<<'**20}")
+            logging.info(f"{'>>'*20} Data Validation {'<<'*20}")
             self.data_validation_config=data_validation_config
             self.data_ingestion_artifact=data_ingestion_artifact
-            Self.validation_error = dict()
+            self.validation_error = dict()
         except Exception as e:
             raise CCException(e, sys)   
 
@@ -24,7 +24,7 @@ class DataValidation:
  
 
 
-    def drop_missing_values_columns(self,df:pd.DataFrame) ->Optional[pd.DataFrame]:
+    def drop_missing_values_columns(self,df:pd.DataFrame,report_key_name:str) ->Optional[pd.DataFrame]:
         try:
             """
             This function will drop column which contains missing value more than threshold
@@ -53,15 +53,15 @@ class DataValidation:
         except Exception as e:
             raise CCException(e, sys)        
 
-    def is_required_column_exist(self,base_df:pd.DataFrame,current_df:pd.DataFrame) ->bool:
+    def is_required_columns_exists(self,base_df:pd.DataFrame,current_df:pd.DataFrame,report_key_name:str) ->bool:
         try:
             base_df = base_df.columns
             current_df = current_df.columns 
-            missing_column= []
+            missing_columns= []
             for base_column in base_df:
                 if base_column not in current_df:
-                    logging.info(f"Column: [{base} is not available.]")
-                    missing_column.append(base_column)
+                    logging.info(f"Column: [{base_column} is not available.]")
+                    missing_columns.append(base_column)
 
             if len(missing_columns)>0:
                 self.validation_error[report_key_name]=missing_columns
@@ -71,7 +71,7 @@ class DataValidation:
             raise CCException(e, sys)
 
 
-    def data_drift(self,base_df:pd.DataFrame, current_df:pd.DataFrame):
+    def data_drift(self,base_df:pd.DataFrame, current_df:pd.DataFrame,report_key_name):
         try:
             drift_report=dict()
 
@@ -131,6 +131,15 @@ class DataValidation:
             if test_df_columns_status:
                 logging.info(f"As all column are available in test df hence detecting data drift")
                 self.data_drift(base_df=base_df, current_df=test_df,report_key_name="data_drift_within_test_dataset")
+
+            #write the report
+            logging.info("Write reprt in yaml file")
+            utils.write_yaml_file(file_path=self.data_validation_config.report_file_path,
+            data=self.validation_error)
+
+            data_validation_artifact = artifact_entity.DataValidationArtifact(report_file_path=self.data_validation_config.report_file_path)
+            logging.info(f"Data validation artifact: {data_validation_artifact}")
+            return data_validation_artifact    
                 
         except Exception as e:
             raise CCException(e, sys)

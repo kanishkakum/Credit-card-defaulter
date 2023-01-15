@@ -1,0 +1,147 @@
+data_drift_within_test_dataset:
+  AGE:
+    pvalues: 0.0
+    same_distribution: false
+  BILL_AMT1:
+    pvalues: 0.0
+    same_distribution: false
+  BILL_AMT2:
+    pvalues: 0.0
+    same_distribution: false
+  BILL_AMT3:
+    pvalues: 0.0
+    same_distribution: false
+  BILL_AMT4:
+    pvalues: 0.0
+    same_distribution: false
+  BILL_AMT5:
+    pvalues: 0.0
+    same_distribution: false
+  BILL_AMT6:
+    pvalues: 0.0
+    same_distribution: false
+  EDUCATION:
+    pvalues: 0.0
+    same_distribution: false
+  LIMIT_BAL:
+    pvalues: 0.0
+    same_distribution: false
+  MARRIAGE:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_0:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_2:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_3:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_4:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_5:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_6:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_AMT1:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_AMT2:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_AMT3:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_AMT4:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_AMT5:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_AMT6:
+    pvalues: 0.0
+    same_distribution: false
+  SEX:
+    pvalues: 0.0
+    same_distribution: false
+  default payment next month:
+    pvalues: 0.0
+    same_distribution: false
+data_drift_within_train_dataset:
+  AGE:
+    pvalues: 0.0
+    same_distribution: false
+  BILL_AMT1:
+    pvalues: 0.0
+    same_distribution: false
+  BILL_AMT2:
+    pvalues: 0.0
+    same_distribution: false
+  BILL_AMT3:
+    pvalues: 0.0
+    same_distribution: false
+  BILL_AMT4:
+    pvalues: 0.0
+    same_distribution: false
+  BILL_AMT5:
+    pvalues: 0.0
+    same_distribution: false
+  BILL_AMT6:
+    pvalues: 0.0
+    same_distribution: false
+  EDUCATION:
+    pvalues: 0.0
+    same_distribution: false
+  LIMIT_BAL:
+    pvalues: 0.0
+    same_distribution: false
+  MARRIAGE:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_0:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_2:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_3:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_4:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_5:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_6:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_AMT1:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_AMT2:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_AMT3:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_AMT4:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_AMT5:
+    pvalues: 0.0
+    same_distribution: false
+  PAY_AMT6:
+    pvalues: 0.0
+    same_distribution: false
+  SEX:
+    pvalues: 0.0
+    same_distribution: false
+  default payment next month:
+    pvalues: 0.0
+    same_distribution: false
+missing_values_within_base_dataset: []
