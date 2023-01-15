@@ -39,7 +39,13 @@ class DataIngestionConfig:
       
 
 
-class DataValidationConfig:...
+class DataValidationConfig:
+    def __ini__(self,training_pipeline_config:TrainingPipelineConfig):
+        try:
+            self.data_validation_dir=os.path.join(training_pipeline_config.artifact_dir,"data_ingestion")
+            self.report_file_path=os.path.join(elf.data_validation_dir,"report.yaml")
+
+
 class DataTransformationConfig:...
 class ModelTrainerConfig:...
 class ModelEvaluationConfig:...
